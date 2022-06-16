@@ -27,7 +27,7 @@ function App() {
                                 <Alert />
                                 <Switch>
                                     <PrivateRoute exact path="/" component={Home} />
-                                    <PrivateRoute path="/users" component={Users} />
+                                    <PrivateRoute path="/verifiers" component={Users} />
                                     <Route path="/account" component={Account} />
                                     <Redirect from="*" to="/" />
                                 </Switch>

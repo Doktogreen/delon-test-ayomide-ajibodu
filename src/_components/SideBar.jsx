@@ -22,7 +22,7 @@ function SideBar() {
                     {/* <!-- Sidebar navigation--> */}
                     <nav className="sidebar-nav">
                         <ul id="sidebarnav">
-                            <li> <a className="waves-effect waves-dark" href="/users" aria-expanded="false"><i
+                            <li> <a className="waves-effect waves-dark" href="/verifiers" aria-expanded="false"><i
                                         className="fa fa-tachometer"></i><span className="hide-menu">Verifyers</span></a>
                             </li>
                             <li> 
