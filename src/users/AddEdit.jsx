@@ -23,8 +23,14 @@ function AddEdit({ history, match }) {
             .required('First Name is required'),
         lastName: Yup.string()
             .required('Last Name is required'),
-        username: Yup.string()
-            .required('Username is required'),
+        phoneNumber: Yup.string()
+            .required('Phone Number is required'),
+        partner: Yup.string()
+            .required('partner is required'),
+        location: Yup.string()
+            .required('Location is required'),
+        status: Yup.string()
+            .required('Status is required'),
         password: Yup.string()
             .transform(x => x === '' ? undefined : x)
             .concat(mode.add ? Yup.string().required('Password is required') : null)
@@ -44,7 +50,6 @@ function AddEdit({ history, match }) {
 
         return userActions.resetUser;
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -53,7 +58,6 @@ function AddEdit({ history, match }) {
             reset(user);
         }
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user])
 
     function onSubmit(data) {
@@ -81,7 +85,7 @@ function AddEdit({ history, match }) {
     const loading = mode.edit && !user;
     return (
         <>
-            <h1>{mode.add ? 'Add User' : 'Edit User'}</h1>
+            <h1>{mode.add ? 'Add New Verifier' : 'Edit Verifier'}</h1>
             {!loading &&
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-row">
@@ -98,9 +102,21 @@ function AddEdit({ history, match }) {
                     </div>
                     <div className="form-row">
                         <div className="form-group col">
-                            <label>Username</label>
-                            <input name="username" type="text" {...register('username')} className={`form-control ${errors.username ? 'is-invalid' : ''}`} />
-                            <div className="invalid-feedback">{errors.email?.message}</div>
+                            <label>Phone Number</label>
+                            <input name="phoneNumber" type="text" {...register('phoneNumber')} className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`} />
+                            <div className="invalid-feedback">{errors.phoneNumber?.message}</div>
+                        </div>
+                        <div className="form-group col">
+                            <label>Partner</label>
+                            <input name="partner" type="text" {...register('partner')} className={`form-control ${errors.partner ? 'is-invalid' : ''}`} />
+                            <div className="invalid-feedback">{errors.partner?.message}</div>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col">
+                            <label>Location</label>
+                            <input name="location" type="text" {...register('location')} className={`form-control ${errors.location ? 'is-invalid' : ''}`} />
+                            <div className="invalid-feedback">{errors.location?.message}</div>
                         </div>
                         <div className="form-group col">
                             <label>
@@ -110,6 +126,14 @@ function AddEdit({ history, match }) {
                             <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col">
+                            <label>Status</label>
+                            <input name="status" type="text" {...register('status')} className={`form-control ${errors.status ? 'is-invalid' : ''}`} />
+                            <div className="invalid-feedback">{errors.status?.message}</div>
+                        </div>
+                        
                     </div>
                     <div className="form-group">
                         <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">

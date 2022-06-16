@@ -1140,23 +1140,6 @@ When click on sidebar toggler and also for tablet
     left: 0px;
   }
 }
-/*
-Template Name: Admin pro Admin
-Author: Wrappixel
-Email: niravjoshi87@gmail.com
-File: scss
-*/
-/*
-Template Name: Admin Pro Admin
-Author: Wrappixel
-Email: niravjoshi87@gmail.com
-File: scss
-*/
-/*Theme Colors*/
-/*bootstrap Color*/
-/*Light colors*/
-/*Normal Color*/
-/*Extra Variable*/
 /*============================================================== 
  For all pages 
  ============================================================== */
@@ -5818,7 +5801,7 @@ File: scss
  ============================================================== */
 @media (min-width: 1024px) {
   .page-wrapper {
-    margin-left: 260px;
+    margin-left: 100px;
   }
 }
 @media (max-width: 1023px) {

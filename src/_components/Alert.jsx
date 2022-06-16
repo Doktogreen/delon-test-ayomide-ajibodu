@@ -19,7 +19,6 @@ function Alert() {
         // stop the listener when component unmounts
         return unlisten;
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (!alert) return null;
